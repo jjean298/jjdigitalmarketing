@@ -1,9 +1,273 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="refresh" content="0;url=https://github.com/googleapis/googleapis.github.io/" />
-<title>Page Moved</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serene</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!--INTERNAL CSS-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f2f5;
+      color: #1f2d3d;
+      text-align: center;
+    }
+
+    .hero {
+      background: url('background.PNG') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: auto;
+      z-index: 1000;
+    }
+
+    .overlay {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, #fff 100%);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+    }
+
+    .content {
+      position: relative;
+      padding: 3rem 1rem 6rem;
+      background-color: white;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+    }
+
+    .info-row {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;  
+    }
+
+    .info-item {
+  text-align: center;
+  max-width: 200px;
+    }
+
+    .info-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+    }
+
+.info-desc {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1f2d3d;
+    }
+
+    p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .button-primary {
+      background: linear-gradient(to right, #fa9def, #6da3a1);
+      color: black;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    .button-secondary {
+      background: white;
+      border: 1px solid #ccc;
+      color: #333;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    .sidenav {
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  padding-top: 65px;
+  position: fixed;
+  transition: all .5s ease;
+  background-color: rgba(254, 189, 247, 0.271);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 999;
+}
+
+.sidenav .logo {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-logo img {
+  width: 75px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.sidenav a {
+  display: block;
+  padding: 25px 0 25px 30px;
+  color: #000;
+  font-size: 15px;
+}
+.sidenav a:hover {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+  border-right: 2px solid #000;
+}
+.sidenav .fa {
+  display: inline-block;
+}
+.single-nav {
+  border-bottom: 1px solid #000;
+}
+#icon {
+  display: none;
+}
+label #openbtn, label #closebtn {
+  position: absolute;
+  cursor: pointer;
+  z-index: 1000;
+}
+label #openbtn {
+  top: 20px;
+  left: 40px;
+  font-size: 15px;
+  background-color: #fa9def;
+  opacity: 80%;
+  padding: 10px;
+  color: #fff;
+}
+label #closebtn {
+  top: 20px;
+  left: -212px;
+  font-size: 15px;
+}
+#icon:checked~.sidenav {
+  left: 0;
+}
+#icon:checked~label #closebtn {
+  left: 200px;
+  color: white;
+  background-color: #fa9def;
+  opacity: 80%;
+  padding: 10px;
+  border-radius: 50%;
+}
+#icon:checked~label #openbtn {
+  left: 170px;
+  opacity: 0;
+}
+    </style>
+    <!--END OF INTERNAL CSS-->
+
 </head>
 <body>
-This page has moved. Click <a href="https://github.com/googleapis/googleapis.github.io/">here</a> to go to the new page.
+
+  <header>
+    <input type="checkbox" id="icon" />
+    <label for="icon" class="iconbtn">
+      <i class="fa fa-times" id="closebtn"></i>
+      <i class="fa fa-bars" id="openbtn"></i>
+    </label>
+  
+    <div class="sidenav">
+      <div class="sidebar-logo">
+        <img src="SereneS.png" alt="Sidebar Logo" />
+      </div>
+      <ul class="mainNav">
+        <li class="single-nav">
+          <a href="https://haroldluis09.github.io/index.html"><i class="fa fa-chevron-right"></i><span>Home</span></a>
+        </li>
+        <li class="single-nav">
+          <a href="https://haroldluis09.github.io/about.html"><i class="fa fa-chevron-right"></i><span>About</span></a>
+        </li>
+        <li class="single-nav">
+          <a href="https://haroldluis09.github.io/dashboard.html"><i class="fa fa-chevron-right"></i><span>Dashboard</span></a>
+        </li>
+        <li class="single-nav">
+          <a href="https://haroldluis09.github.io/premium.html"><i class="fa fa-chevron-right"></i><span>Serene Premium</span></a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="hero">
+    <a href="index.html">
+    <img src="SereneLogo.PNG" alt="Serene Logo" class="logo" />
+    </a>
+    <div class="overlay"></div>
+  </div>
+
+  <div class="content">
+    <h1><b>Keep your mind Serene. Change your life.</b></h1>
+    <p>Ease your daily routine, the best app for daily change.</p>
+    <a href="free.html"><button class="button-primary">Try Serene for Free</button></a><br />
+    <a href="login.html"><button class="button-secondary">Already have an account?</button></a>
+  </div>
+
+  <div class="info-row">
+    <div class="info-item">
+      <p class="info-title">Digital Detox</p>
+      <p class="info-desc">Take a break from screens with guided unplugging sessions designed to help you recharge, focus, and improve mindfulness.</p>
+    </div>
+    <div class="info-item">
+      <p class="info-title">Daily Journal</p>
+      <p class="info-desc">Capture your thoughts and track emotions daily, bring a deeper understanding to your daily life with the journal feature.</p>
+    </div>
+    <div class="info-item">
+      <p class="info-title">Stretching</p>
+      <p class="info-desc">Relieve tension and boost flexibility with guided stretching routines tailored for relaxation and daily movement.</p>
+    </div>
+  </div>
+
 </body>
 </html>
+
